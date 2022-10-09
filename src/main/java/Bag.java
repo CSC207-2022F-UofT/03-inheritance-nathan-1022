@@ -98,8 +98,14 @@ public abstract class Bag {
      */
     public String popItem(){
         if(this.capacity != 0){
-
+            String last;
+            int lastIndex = contents.size()-1;
+            last = contents.get(lastIndex);
+            contents.remove(lastIndex);
+            numberOfContents -= 1;
+            return last;
         }
+        return null;
     }
 
 
